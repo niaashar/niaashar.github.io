@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мероприятия — Lenni Art</title>
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body class="page">
+<header class="header page__header"><div class="header__inner">
+<a aria-label="Lenni Art — на главную" class="header__logo" href="index.html"><span class="header__logo-first">LENNI</span><span class="header__logo-second">ART</span></a>
+<nav aria-label="Основная навигация" class="header__nav">
+<ul class="header__list">
+<li class="header__item"><a class="header__link" href="events.html">Мероприятия</a></li>
+<li class="header__item"><a class="header__link" href="index.html#blog">Блог</a></li>
+<li class="header__item"><a class="header__link" href="index.html#about">О нас</a></li>
+<li class="header__item"><a class="header__link" href="index.html#contacts">Контакты</a></li>
+</ul>
+</nav>
+<button class="header__login" type="button">Войти</button>
+</div></header>
+<main class="main page__main" id="top">
+<section class="events-list" aria-labelledby="events-list-title">
+  <div class="events-list__inner">
+    <p class="events-list__eyebrow">Арт-пространство Lenni Art</p>
+    <h1 class="events-list__title" id="events-list-title">МЕРОПРИЯТИЯ</h1>
+    <p class="events-list__intro">Музыка, творческие встречи и события для тех, кто любит открывать новое.</p>
+    <div class="events-list__grid">
+      <article class="event-card events-list__card" id="event-1">
+      <img class="event-card__image" src="images/event-1.svg" alt="Афиша: Собираемся и слушаем альбом Nirvana. Nirvana" loading="lazy">
+      <h2 class="event-card__title"><a class="event-card__title-link" href="event.html">Собираемся и слушаем альбом Nirvana. Nirvana</a></h2>
+      <p class="event-card__description">Это третий альбом группы, выпущенный после смерти Курта Кобейна, и первый, содержащий студийный материал.</p>
+      <p class="event-card__schedule"><time class="event-card__time" datetime="2026-12-07T18:00">07.12.2026 | начало 18:00</time></p>
+      <a class="event-card__more" href="event.html">Подробнее о мероприятии</a>
+    </article>
+<article class="event-card events-list__card" id="event-2">
+      <img class="event-card__image" src="images/event-2.svg" alt="Афиша: Есть тема, нужно обсудить с HowStuffWorks" loading="lazy">
+      <h2 class="event-card__title">Есть тема, нужно обсудить с HowStuffWorks</h2>
+      <p class="event-card__description">Один из самых популярных подкастов в мире. В нём авторы объясняют, как устроены разные вещи.</p>
+      <p class="event-card__schedule"><time class="event-card__time" datetime="2026-12-14T18:30">14.12.2026 | начало 18:30</time></p>
+      <span class="event-card__hint">Анонс мероприятия</span>
+    </article>
+<article class="event-card events-list__card" id="event-3">
+      <img class="event-card__image" src="images/event-3.svg" alt="Афиша: Вечер | The Best of Sade" loading="lazy">
+      <h2 class="event-card__title">Вечер | The Best of Sade</h2>
+      <p class="event-card__description">Музыка группы имеет эклектичный характер, сочетая в себе элементы музыки соул, джаза, ритм-блюза и фанка.</p>
+      <p class="event-card__schedule"><time class="event-card__time" datetime="2026-12-16T20:00">16.12.2026 | начало 20:00</time></p>
+      <span class="event-card__hint">Анонс мероприятия</span>
+    </article>
+
+    </div>
+  </div>
+</section>
+</main>
+<footer class="footer page__footer"><div class="footer__inner">
+<p class="footer__slogan">Просто делайте, что нравится, а мы вам поможем.</p>
+<nav aria-label="Навигация в подвале" class="footer__nav">
+<ul class="footer__list">
+<li class="footer__item"><a class="footer__link" href="events.html">Календарь мероприятий</a></li>
+<li class="footer__item"><a class="footer__link" href="index.html#contacts">Провести мероприятие</a></li>
+<li class="footer__item"><a class="footer__link" href="index.html#contacts">Стать арендатором</a></li>
+<li class="footer__item"><a class="footer__link" href="index.html#about">Наши проекты</a></li>
+<li class="footer__item"><a class="footer__link" href="index.html#contacts">Контакты</a></li>
+</ul>
+</nav>
+<section aria-labelledby="subscribe-title" class="subscribe footer__subscribe">
+<h2 class="subscribe__title" id="subscribe-title">Подпишись и будь в курсе происходящего</h2>
+<form class="subscribe__form">
+<label class="subscribe__label" for="subscriber-email">Email</label>
+<input class="subscribe__input" id="subscriber-email" name="email" placeholder="Email" required="" type="email"/>
+<button class="subscribe__button" type="button">Подписаться</button>
+<p class="subscribe__agreement">
+<input class="subscribe__checkbox" id="personal-data" name="personal-data" required="" type="checkbox"/>
+<label class="subscribe__agreement-label" for="personal-data">Согласен на обработку персональных данных</label>
+</p>
+</form>
+</section>
+<p class="footer__socials">Социальные сети: ВКонтакте и другие площадки.</p>
+<p class="footer__copyright">© Millennials 2025</p>
+<p class="footer__legal">Политика конфиденциальности · Cookies</p>
+<p class="footer__credits">Создание и продвижение — Dignity</p>
+</div></footer>
+</body>
+</html>
