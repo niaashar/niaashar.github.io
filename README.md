@@ -1,5 +1,4 @@
 
-
 ## Страницы
 - `index.html` — главная страница.
 - `events.html` — листинг мероприятий (CSS Grid).
@@ -18,4 +17,16 @@
 
 ## Замечание преподавателя к заданию 1.3
 Фон задаётся внешним секциям (`.hero`, `.events`, `.contacts`), а ограничение ширины и отступы — внутренним контейнерам (`.__inner`). Поэтому фон занимает всю ширину окна.
+
+## Файлы задания 1.5
+
+- `src/`: исходные страницы, HTML-фрагменты, LESS, изображения и шрифты.
+- `package.json`: Gulp и зависимости.
+- `gulpfile.mjs`: задачи `html`, `styles`, `assets`, `build`, `dev`.
+- `src/partials/header.html` и `footer.html`: переиспользуемая разметка.
+- `src/partials/event-card.html`: единый шаблон карточек мероприятий, подключаемый через `includer` (`gulp-file-include`).
+- `src/partials/blog-card.html`: общий шаблон карточек блога.
+- `src/blog.html` / `blog.html`: новая страница блога.
+- `src/styles/styles.less`: точка входа LESS.
+
 

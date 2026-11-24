@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мероприятия — Lenni Art</title>
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body class="page">
+@@include('partials/header.html')
+<main class="main page__main" id="top">
+<section class="events-list" aria-labelledby="events-list-title">
+  <div class="events-list__inner">
+    <p class="events-list__eyebrow">Арт-пространство Lenni Art</p>
+    <h1 class="events-list__title" id="events-list-title">МЕРОПРИЯТИЯ</h1>
+    <p class="events-list__intro">Музыка, творческие встречи и события для тех, кто любит открывать новое.</p>
+    <div class="events-list__grid">
+      @@include('partials/event-card.html', {"contextClass": "events-list__card", "idAttr": " id=\"event-1\"", "image": "images/event-1.svg", "alt": "Афиша: Собираемся и слушаем альбом Nirvana. Nirvana", "heading": "h2", "titleMarkup": "<a class=\"event-card__title-link\" href=\"event.html\">Собираемся и слушаем альбом Nirvana. Nirvana</a>", "description": "Это третий альбом группы, выпущенный после смерти Курта Кобейна, и первый, содержащий студийный материал.", "datetime": "2026-12-07T18:00", "schedule": "07.12.2026 | начало 18:00", "tail": "<a class=\"event-card__more\" href=\"event.html\">Подробнее о мероприятии</a>"})
+@@include('partials/event-card.html', {"contextClass": "events-list__card", "idAttr": " id=\"event-2\"", "image": "images/event-2.svg", "alt": "Афиша: Есть тема, нужно обсудить с HowStuffWorks", "heading": "h2", "titleMarkup": "Есть тема, нужно обсудить с HowStuffWorks", "description": "Один из самых популярных подкастов в мире. В нём авторы объясняют, как устроены разные вещи.", "datetime": "2026-12-14T18:30", "schedule": "14.12.2026 | начало 18:30", "tail": "<span class=\"event-card__hint\">Анонс мероприятия</span>"})
+@@include('partials/event-card.html', {"contextClass": "events-list__card", "idAttr": " id=\"event-3\"", "image": "images/event-3.svg", "alt": "Афиша: Вечер | The Best of Sade", "heading": "h2", "titleMarkup": "Вечер | The Best of Sade", "description": "Музыка группы имеет эклектичный характер, сочетая в себе элементы музыки соул, джаза, ритм-блюза и фанка.", "datetime": "2026-12-16T20:00", "schedule": "16.12.2026 | начало 20:00", "tail": "<span class=\"event-card__hint\">Анонс мероприятия</span>"})
+
+    </div>
+  </div>
+</section>
+</main>
+@@include('partials/footer.html')
+</body>
+</html>

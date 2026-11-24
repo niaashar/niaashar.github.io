@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Бронирование мероприятия — Lenni Art</title>
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body class="page">
+@@include('partials/header.html')
+<main class="main page__main" id="top">
+<section class="event-detail" aria-labelledby="event-detail-title">
+  <div class="event-detail__inner">
+    <a class="event-detail__back" href="events.html">← Все мероприятия</a>
+    <p class="event-detail__eyebrow">Музыкальная встреча · 7 декабря 2026</p>
+    <h1 class="event-detail__title" id="event-detail-title">Собираемся и слушаем альбом Nirvana. Nirvana</h1>
+    <div class="event-detail__layout">
+      <div class="event-detail__info">
+        <img class="event-detail__poster" src="images/event-1.svg" alt="Афиша вечера Nirvana">
+        <p class="event-detail__description">Это третий альбом группы, выпущенный после смерти Курта Кобейна, и первый, содержащий студийный материал.</p>
+        <p class="event-detail__schedule"><strong class="event-detail__label">Когда:</strong> <time class="event-detail__time" datetime="2026-12-07T18:00">7 декабря 2026, 18:00</time></p>
+        <p class="event-detail__place"><strong class="event-detail__label">Где:</strong> Томск, Красноармейская, 146</p>
+      </div>
+      <section class="booking event-detail__booking" aria-labelledby="booking-title">
+        <h2 class="booking__title" id="booking-title">Бронирование</h2>
+        <p class="booking__description">Схема зала из материалов курса. Разметка блока бронирования построена с использованием CSS Grid.</p>
+        <div class="booking__content">
+          <figure class="booking__map">
+            <div class="booking__map-viewport">
+              <img class="booking__scheme" src="images/карта_заведения.svg"
+                   alt="Схема зала: танцпол и 11 столов, номера 1, 4, 7, 8 и 9 выделены красным"
+                   width="780" height="399">
+            </div>
+            <figcaption class="booking__map-caption">11 столов вокруг танцпола. На небольшом экране схему можно прокрутить вправо.</figcaption>
+          </figure>
+          <div class="booking__legend" aria-label="Условные обозначения">
+            <p class="booking__legend-title">Условные обозначения</p>
+            <span class="booking__legend-item"><span class="booking__legend-dot" aria-hidden="true"></span> Обычный стол</span>
+            <span class="booking__legend-item"><span class="booking__legend-dot booking__legend-dot--red" aria-hidden="true"></span> Стол, выделенный красным</span>
+            <p class="booking__legend-note">Цвета взяты из исходной схемы и не означают статус бронирования.</p>
+          </div>
+          <form class="booking__form" action="#" method="get">
+            <div class="booking__fields">
+              <label class="booking__field">Ваше имя
+                <input class="booking__input" type="text" name="name" placeholder="Имя" autocomplete="name">
+              </label>
+              <label class="booking__field">Электронная почта
+                <input class="booking__input" type="email" name="email" placeholder="Email" autocomplete="email">
+              </label>
+            </div>
+            <button class="booking__button" type="button" disabled>Бронирование пока недоступно</button>
+          </form>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+</main>
+@@include('partials/footer.html')
+</body>
+</html>

@@ -12,13 +12,14 @@
 <nav aria-label="Основная навигация" class="header__nav">
 <ul class="header__list">
 <li class="header__item"><a class="header__link" href="events.html">Мероприятия</a></li>
-<li class="header__item"><a class="header__link" href="index.html#blog">Блог</a></li>
+<li class="header__item"><a class="header__link" href="blog.html">Блог</a></li>
 <li class="header__item"><a class="header__link" href="index.html#about">О нас</a></li>
 <li class="header__item"><a class="header__link" href="index.html#contacts">Контакты</a></li>
 </ul>
 </nav>
 <button class="header__login" type="button">Войти</button>
 </div></header>
+
 <main class="main page__main" id="top">
 <section aria-labelledby="hero-title" class="hero"><div class="hero__inner">
 <p class="hero__eyebrow">АРТ — ПРОСТРАНСТВО</p>
@@ -55,57 +56,49 @@
 
 
 
-<div class="events__grid"><article class="event-card events__card"><img alt="Афиша музыкального вечера Nirvana" class="event-card__image" loading="lazy" src="images/event-1.svg"/>
-<h3 class="event-card__title"><a class="event-card__title-link" href="event.html">Собираемся и слушаем альбом Nirvana. Nirvana</a></h3>
-<p class="event-card__description">
-          Это третий альбом группы, выпущенный после смерти Курта Кобейна,
-          и первый, содержащий студийный материал.
-        </p>
-<p class="event-card__schedule"><time class="event-card__time" datetime="2026-12-07T18:00">07.12.2026 | начало 18:00</time></p>
-</article><article class="event-card events__card"><img alt="Афиша обсуждения подкаста HowStuffWorks" class="event-card__image" loading="lazy" src="images/event-2.svg"/>
-<h3 class="event-card__title">Есть тема, нужно обсудить с HowStuffWorks</h3>
-<p class="event-card__description">
-          Один из самых популярных подкастов в мире. В нём авторы объясняют,
-          как устроены разные вещи.
-        </p>
-<p class="event-card__schedule"><time class="event-card__time" datetime="2026-12-14T18:30">14.12.2026 | начало 18:30</time></p>
-</article><article class="event-card events__card"><img alt="Афиша вечера музыки Sade" class="event-card__image" loading="lazy" src="images/event-3.svg"/>
-<h3 class="event-card__title">Вечер | The Best of Sade</h3>
-<p class="event-card__description">
-          Музыка группы имеет эклектичный характер, сочетая в себе
-          элементы музыки соул, джаза, ритм-блюза и фанка.
-        </p>
-<p class="event-card__schedule"><time class="event-card__time" datetime="2026-12-16T20:00">16.12.2026 | начало 20:00</time></p>
-</article></div><a class="events__more" href="events.html">Смотреть все мероприятия</a></div></section>
+<div class="events__grid"><article class="event-card events__card">
+  <img class="event-card__image" src="images/event-1.svg" alt="Афиша музыкального вечера Nirvana" loading="lazy">
+  <h3 class="event-card__title"><a class="event-card__title-link" href="event.html">Собираемся и слушаем альбом Nirvana. Nirvana</a></h3>
+  <p class="event-card__description">Это третий альбом группы, выпущенный после смерти Курта Кобейна, и первый, содержащий студийный материал.</p>
+  <p class="event-card__schedule"><time class="event-card__time" datetime="2026-12-07T18:00">07.12.2026 | начало 18:00</time></p>
+  
+</article>
+<article class="event-card events__card">
+  <img class="event-card__image" src="images/event-2.svg" alt="Афиша обсуждения подкаста HowStuffWorks" loading="lazy">
+  <h3 class="event-card__title">Есть тема, нужно обсудить с HowStuffWorks</h3>
+  <p class="event-card__description">Один из самых популярных подкастов в мире. В нём авторы объясняют, как устроены разные вещи.</p>
+  <p class="event-card__schedule"><time class="event-card__time" datetime="2026-12-14T18:30">14.12.2026 | начало 18:30</time></p>
+  
+</article>
+<article class="event-card events__card">
+  <img class="event-card__image" src="images/event-3.svg" alt="Афиша вечера музыки Sade" loading="lazy">
+  <h3 class="event-card__title">Вечер | The Best of Sade</h3>
+  <p class="event-card__description">Музыка группы имеет эклектичный характер, сочетая в себе элементы музыки соул, джаза, ритм-блюза и фанка.</p>
+  <p class="event-card__schedule"><time class="event-card__time" datetime="2026-12-16T20:00">16.12.2026 | начало 20:00</time></p>
+  
+</article>
+</div><a class="events__more" href="events.html">Смотреть все мероприятия</a></div></section>
 <section aria-labelledby="blog-title" class="blog" id="blog"><div class="blog__inner">
 <h2 class="blog__title" id="blog-title">БЛОГ</h2>
 <article class="blog-card blog__card">
-<p class="blog-card__date"><time class="blog-card__time" datetime="2026-11-26">26.11.2026</time></p>
-<h3 class="blog-card__title">Фотосессия в стенах Театра драмы</h3>
-<p class="blog-card__description">
-          Организовывали фотосессию для локального бренда одежды.
-          Мы смогли воплотить все пожелания заказчика, и у нас получилась
-          отличная работа. Смотрите, как это было.
-        </p>
+  <p class="blog-card__date"><time class="blog-card__time" datetime="2026-11-26">26.11.2026</time></p>
+  <h3 class="blog-card__title">Фотосессия в стенах Театра драмы</h3>
+  <p class="blog-card__description">Организовывали фотосессию для локального бренда одежды. Мы смогли воплотить все пожелания заказчика, и у нас получилась отличная работа. Смотрите, как это было.</p>
 </article>
+
 <article class="blog-card blog__card">
-<p class="blog-card__date"><time class="blog-card__time" datetime="2026-11-05">05.11.2026</time></p>
-<h3 class="blog-card__title">Выставка VR в Томске</h3>
-<p class="blog-card__description">
-          Клуб виртуальной реальности — это другие миры, яркие эмоции,
-          новый опыт. Мы предоставляем нашим клиентам лучший игровой
-          VR-опыт в Томске.
-        </p>
+  <p class="blog-card__date"><time class="blog-card__time" datetime="2026-11-05">05.11.2026</time></p>
+  <h3 class="blog-card__title">Выставка VR в Томске</h3>
+  <p class="blog-card__description">Клуб виртуальной реальности — это другие миры, яркие эмоции, новый опыт. Мы предоставляем нашим клиентам лучший игровой VR-опыт в Томске.</p>
 </article>
+
 <article class="blog-card blog__card">
-<p class="blog-card__date"><time class="blog-card__time" datetime="2026-11-01">01.11.2026</time></p>
-<h3 class="blog-card__title">Rocking radio в заброшенном ангаре</h3>
-<p class="blog-card__description">
-          15 электрогенераторов, километры проводов и пару тонн света.
-          Всё это для того, чтобы организовать лучшую вечеринку года
-          для ребят из Новосибирска.
-        </p>
+  <p class="blog-card__date"><time class="blog-card__time" datetime="2026-11-01">01.11.2026</time></p>
+  <h3 class="blog-card__title">Rocking radio в заброшенном ангаре</h3>
+  <p class="blog-card__description">15 электрогенераторов, километры проводов и пару тонн света. Всё это для того, чтобы организовать лучшую вечеринку года для ребят из Новосибирска.</p>
 </article>
+
+<a class="blog__more" href="blog.html">Смотреть все статьи</a>
 </div></section>
 <section aria-labelledby="contacts-title" class="contacts" id="contacts"><div class="contacts__inner">
 <h2 class="contacts__title" id="contacts-title">КОНТАКТЫ</h2>
@@ -150,5 +143,6 @@
 <p class="footer__legal">Политика конфиденциальности · Cookies</p>
 <p class="footer__credits">Создание и продвижение — Dignity</p>
 </div></footer>
+
 </body>
 </html>

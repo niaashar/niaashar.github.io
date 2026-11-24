@@ -1,0 +1,33 @@
+
+/* Задание 1.5, пункт 9 — отдельная страница с листингом блога. */
+.blog {
+  &__more {
+    display: inline-block;
+    margin-top: 24px;
+    color: @site-accent;
+    text-underline-offset: 4px;
+  }
+}
+.blog-list {
+  background: var(--mist);
+  &__inner {
+    width: 100%;
+    max-width: var(--content-width);
+    padding: 74px 24px 100px;
+    margin: 0 auto;
+  }
+  &__eyebrow { margin: 0 0 10px; font-size: 14px; }
+  &__title { margin: 0 0 18px; font: 300 clamp(40px, 7vw, 78px)/1.08 "MAK", Georgia, serif; }
+  &__intro { margin: 0 0 40px; }
+  &__grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+  &__card {
+    background: white;
+    padding: 28px 32px;
+    border-bottom: 1px solid var(--line);
+    &:last-child { border-bottom: 0; }
+  }
+}
+@media (max-width: 640px) {
+  .blog-list__inner { padding: 55px 18px 70px; }
+  .blog-list__card { padding: 22px 18px; }
+}

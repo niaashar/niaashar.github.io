@@ -1,0 +1,291 @@
+// Исходный styles.css из задания 1.4 сохранён как основа.
+// БЭМ-элементы ниже преобразованы во вложенные правила LESS.
+@site-accent: #c63228;
+@site-ink: #211f20;
+/* Шрифты MAK предоставлены в материалах курса. Уточните права на публичное распространение. */
+@font-face {
+  font-family: "MAK";
+  src: url("../fonts/MAK-light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "MAK";
+  src: url("../fonts/MAK-bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Lenni Art: задания 1.2–1.4. Фон секций на всю ширину, контент ограничен. */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+:root {
+  --ink: #211f20;
+  --accent: #c63228;
+  --muted: #686465;
+  --paper: #fff;
+  --mist: #efeeec;
+  --line: #d9d5d3;
+  --content-width: 1334px;
+}
+
+html { scroll-behavior: smooth; }
+
+/* Задание 1.2: красный h1 */
+h1 { color: red; }
+
+/* Задание 1.4 (п. 1): footer остаётся внизу даже на короткой странице. */
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--paper);
+}
+.main { flex: 1 0 auto; width: 100%; min-width: 0; }
+.header, .footer { width: 100%; flex-shrink: 0; }
+
+/* Задание 1.3: max-width и отступы теперь у ВНУТРЕННИХ контейнеров.
+   Фон задаётся внешней секции и занимает всю ширину экрана. */
+.header__inner,
+.footer__inner,
+.hero__inner,
+.about__inner,
+.events__inner,
+.blog__inner,
+.contacts__inner,
+.events-list__inner,
+.event-detail__inner {
+  width: 100%;
+  max-width: var(--content-width);
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 24px;
+  padding-left: 24px;
+}
+
+/* Задание 1.4 (п. 2): шапка на Flexbox */
+.header { background: #fff; border-bottom: 1px solid #f0efee; }
+.header__inner {
+  min-height: 94px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+.header {
+  &__logo {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 102px;
+  min-height: 72px;
+  justify-content: center;
+  padding: 9px 10px;
+  color: #fff;
+  background: @site-ink;
+  text-decoration: none;
+  font-family: "MAK", Georgia, serif;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: .06em;
+  font-size: 19px;
+}
+}
+.header__logo-second { align-self: flex-end; padding: 4px 6px 2px; background: var(--accent); }
+.header__nav { margin: 0 auto; }
+.header {
+  &__list { display: flex; flex-wrap: wrap; align-items: center; gap: 28px; margin: 0; padding: 0; list-style: none; }
+}
+.header__link { color: var(--ink); text-decoration: none; font-size: 14px; }
+.header__link:hover, .header__link:focus-visible { color: var(--accent); }
+.header {
+  &__login { flex: 0 0 auto; padding: 9px 22px; border: 1px solid #777; background: transparent; color: var(--ink); cursor: pointer; }
+}
+.header__login:hover { border-color: var(--accent); color: var(--accent); }
+
+/* Главная страница: каждый фон на всю ширину */
+.hero { background: var(--mist); }
+.hero__inner { padding-top: 84px; padding-bottom: 98px; }
+.hero__eyebrow { margin: 0 0 20px; font-family: "MAK", Georgia, serif; font-weight: 300; font-size: 22px; letter-spacing: .07em; }
+.hero {
+  &__title { margin: 0 0 25px; font-family: "MAK", Georgia, serif; font-size: clamp(60px, 9vw, 120px); font-weight: 300; line-height: 1.05; letter-spacing: -.055em; }
+}
+.hero {
+  &__description { max-width: 800px; font-family: Georgia, serif; font-size: clamp(20px, 2.5vw, 29px); text-transform: uppercase; line-height: 1.35; }
+}
+.hero__prompt { margin-top: 34px; font-family: Georgia, serif; }
+.hero__action-link { display: inline-block; margin: 4px 14px 4px 0; padding: 12px 18px; border: 1px solid var(--ink); text-decoration: none; color: var(--ink); font-size: 14px; }
+.hero__action-link--primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+.hero__action-link:hover { opacity: .85; }
+
+.about { background: #fff; }
+.about__inner { padding-top: 84px; padding-bottom: 96px; }
+.about__title, .events__title, .blog__title, .contacts__title {
+  max-width: 480px;
+  margin: 0 auto 54px;
+  padding: 9px 24px;
+  background: var(--ink);
+  color: #fff;
+  font-family: "MAK", Georgia, serif;
+  font-size: 27px;
+  font-weight: 400;
+  text-align: center;
+}
+.about {
+  &__subtitle { margin: 28px 0 14px; font-size: clamp(21px, 2.5vw, 28px); }
+}
+.about__text { max-width: 850px; margin: 0 0 16px; }
+.about__link, .events__more { display: inline-block; margin-top: 18px; color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
+
+.events { background: var(--mist); }
+.events__inner { padding-top: 84px; padding-bottom: 100px; }
+.events__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; }
+.event-card { min-width: 0; display: flex; flex-direction: column; }
+.event-card {
+  &__image { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; background: #d8d5d3; }
+}
+.event-card {
+  &__title { margin: 18px 0 10px; font-size: 19px; line-height: 1.3; }
+}
+.event-card__title-link { color: inherit; text-decoration: none; }
+.event-card__title-link:hover { color: var(--accent); text-decoration: underline; }
+.event-card {
+  &__description { margin: 0 0 14px; font-size: 14px; }
+}
+.event-card {
+  &__schedule { margin: auto 0 0; padding-top: 12px; font-size: 12px; color: var(--muted); }
+}
+.event-card__more { display: inline-block; margin-top: 14px; font-size: 14px; color: var(--accent); }
+.event-card__hint { display: inline-block; margin-top: 14px; font-size: 13px; color: var(--muted); }
+.events__more { margin-top: 35px; }
+
+.blog { background: #fff; }
+.blog__inner { padding-top: 86px; padding-bottom: 96px; }
+.blog-card { padding: 24px 0; border-bottom: 1px solid var(--line); }
+.blog-card__date { margin: 0; font-size: 12px; color: var(--muted); }
+.blog-card__title { margin: 10px 0; font-size: 21px; }
+.blog-card__description { max-width: 760px; margin: 0; font-size: 15px; }
+
+.contacts { background: var(--mist); }
+.contacts__inner { padding-top: 82px; padding-bottom: 98px; }
+.contacts__address { font-style: normal; }
+.contacts__subtitle { margin: 28px 0 8px; font-size: 19px; }
+.contacts__text { margin: 3px 0; }
+.contacts__link { color: inherit; }
+
+/* Footer — общий для всех трёх страниц */
+.footer { background: #e6e4e2; border-top: 1px solid var(--line); }
+.footer__inner { padding-top: 64px; padding-bottom: 40px; }
+.footer {
+  &__slogan { max-width: 960px; margin: 0 0 50px; font: 300 clamp(32px, 5.3vw, 65px)/1.12 "MAK", Georgia, serif; }
+}
+.footer__nav { display: inline-block; vertical-align: top; width: 45%; }
+.footer__list { margin: 0; padding: 0; list-style: none; }
+.footer__item { margin-bottom: 10px; }
+.footer__link { color: var(--ink); text-decoration: none; }
+.footer__link:hover { color: var(--accent); }
+.footer__subscribe { display: inline-block; vertical-align: top; width: 50%; }
+.subscribe__title { margin: 0 0 15px; font-size: 16px; font-weight: 500; }
+.subscribe__form { display: flex; flex-wrap: wrap; gap: 10px; }
+.subscribe__label { width: 100%; font-size: 13px; }
+.subscribe__input { min-width: 0; flex: 1; padding: 10px 12px; border: 1px solid #ccc; }
+.subscribe__button { padding: 10px 16px; border: 0; background: var(--ink); color: #fff; cursor: pointer; }
+.subscribe__agreement { width: 100%; margin: 4px 0; font-size: 12px; }
+.footer__socials { margin-top: 40px; }
+.footer__copyright, .footer__legal, .footer__credits { margin: 8px 0; font-size: 13px; color: var(--muted); }
+
+/* Задание 1.4 (п. 3): листинг мероприятий на CSS Grid */
+.events-list { background: var(--mist); }
+.events-list__inner { padding-top: 75px; padding-bottom: 100px; }
+.events-list__eyebrow { margin: 0 0 8px; font-family: Georgia, serif; letter-spacing: .06em; }
+.events-list__title { margin: 0 0 18px; font: 300 clamp(40px, 7vw, 78px)/1.08 "MAK", Georgia, serif; letter-spacing: -.04em; }
+.events-list__intro { max-width: 620px; margin: 0 0 45px; }
+.events-list__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; }
+.events-list__card { padding-bottom: 20px; }
+
+/* Задание 1.4 (п. 4): сетка бронирования на Grid Layout */
+.event-detail { background: var(--mist); }
+.event-detail__inner { padding-top: 65px; padding-bottom: 100px; }
+.event-detail__back { color: var(--ink); text-underline-offset: 4px; }
+.event-detail__eyebrow { margin: 35px 0 10px; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.event-detail__title { max-width: 900px; margin: 0 0 45px; font: 300 clamp(35px, 5vw, 64px)/1.1 "MAK", Georgia, serif; }
+.event-detail__layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(320px, 1fr); gap: 48px; align-items: start; }
+.event-detail__poster { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+.event-detail__description { font-size: 17px; }
+.event-detail__schedule, .event-detail__place { margin: 12px 0; }
+.booking { min-width: 0; padding: 30px; background: #fff; border: 1px solid var(--line); }
+.booking__title { margin: 0 0 8px; font: 300 38px/1.15 "MAK", Georgia, serif; }
+.booking__description { margin: 0 0 24px; font-size: 13px; color: var(--muted); }
+/* Схема зала из материалов курса; Grid задаёт расположение блоков бронирования.
+   Само изображение SVG не является CSS Grid — сетка именно у .booking__content. */
+.booking {
+  &__content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+}
+.booking__map { grid-column: 1 / -1; min-width: 0; margin: 0; }
+.booking__map-viewport { width: 100%; overflow-x: auto; padding: 20px 14px; background: #f8f7f6; border: 1px solid var(--line); }
+.booking__scheme { display: block; width: 100%; min-width: 520px; height: auto; }
+.booking__map-caption { margin-top: 9px; font-size: 12px; line-height: 1.5; color: var(--muted); }
+.booking__legend { grid-column: 1; display: flex; flex-direction: column; gap: 12px; margin: 0; padding: 14px 0; font-size: 13px; }
+.booking__legend-title { margin: 0 0 2px; font-weight: 700; }
+.booking__legend-item { display: flex; align-items: center; gap: 9px; }
+.booking__legend-dot { display: inline-block; flex: 0 0 auto; width: 15px; height: 15px; border: 2px solid #1f1e1e; background: transparent; }
+.booking__legend-dot--red { border-color: #bc3324; }
+.booking__legend-note { margin: 5px 0 0; font-size: 12px; color: var(--muted); }
+.booking__form { grid-column: 2; }
+.booking {
+  &__fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+}
+.booking__field { display: flex; flex-direction: column; gap: 6px; font-size: 13px; }
+.booking__input { width: 100%; min-width: 0; padding: 10px; border: 1px solid var(--line); font: inherit; }
+.booking__button { width: 100%; margin-top: 18px; padding: 13px; border: 0; background: var(--accent); color: #fff; font: inherit; }
+.booking__button:disabled { cursor: not-allowed; opacity: .65; }
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+@media (max-width: 900px) {
+  .header__inner { flex-wrap: wrap; justify-content: center; padding-top: 12px; padding-bottom: 12px; }
+  .header__nav { margin: 0; }
+  .events__grid, .events-list__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .event-detail__layout { grid-template-columns: 1fr; }
+  .event-detail__info { max-width: 550px; }
+}
+@media (max-width: 640px) {
+  .header__inner, .footer__inner, .hero__inner, .about__inner, .events__inner,
+  .blog__inner, .contacts__inner, .events-list__inner, .event-detail__inner { padding-left: 18px; padding-right: 18px; }
+  .header__inner { gap: 15px; }
+  .header__logo { width: 86px; min-height: 60px; font-size: 16px; }
+  .header__nav { order: 3; width: 100%; }
+  .header__list { justify-content: center; gap: 12px 18px; }
+  .header__login { margin-left: auto; }
+  .hero__inner { padding-top: 65px; padding-bottom: 75px; }
+  .hero__title { font-size: clamp(52px, 12vw, 78px); }
+  .about__inner, .events__inner, .blog__inner, .contacts__inner { padding-top: 65px; padding-bottom: 70px; }
+  .about__title, .events__title, .blog__title, .contacts__title { margin-bottom: 35px; }
+  .events__grid, .events-list__grid { grid-template-columns: 1fr; }
+  .event-card { max-width: 430px; }
+  .footer__slogan { margin-bottom: 35px; }
+  .footer__nav, .footer__subscribe { display: block; width: 100%; }
+  .footer__subscribe { margin-top: 30px; }
+  .booking { padding: 18px; }
+  .booking__content { grid-template-columns: 1fr; gap: 18px; }
+  .booking__map { grid-column: 1; }
+  .booking__legend, .booking__form { grid-column: 1; }
+  .booking__scheme { min-width: 520px; }
+  .booking__fields { grid-template-columns: 1fr; }
+  .events-list__inner, .event-detail__inner { padding-top: 50px; padding-bottom: 70px; }
+}
+

@@ -258,3 +258,18 @@ h1 { color: red; }
   .booking__fields { grid-template-columns: 1fr; }
   .events-list__inner, .event-detail__inner { padding-top: 50px; padding-bottom: 70px; }
 }
+
+/* Задание 1.5 — листинг блога */
+.blog__more { display: inline-block; margin-top: 24px; color: #c63228; text-underline-offset: 4px; }
+.blog-list { background: var(--mist); }
+.blog-list__inner { width: 100%; max-width: var(--content-width); padding: 74px 24px 100px; margin: 0 auto; }
+.blog-list__eyebrow { margin: 0 0 10px; font-size: 14px; }
+.blog-list__title { margin: 0 0 18px; font: 300 clamp(40px, 7vw, 78px)/1.08 "MAK", Georgia, serif; }
+.blog-list__intro { margin: 0 0 40px; }
+.blog-list__grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.blog-list__card { background: white; padding: 28px 32px; border-bottom: 1px solid var(--line); }
+.blog-list__card:last-child { border-bottom: 0; }
+@media (max-width: 640px) {
+ .blog-list__inner { padding: 55px 18px 70px; }
+ .blog-list__card { padding: 22px 18px; }
+}
