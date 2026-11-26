@@ -14,6 +14,7 @@
     <p class="events-list__eyebrow">Арт-пространство Lenni Art</p>
     <h1 class="events-list__title" id="events-list-title">МЕРОПРИЯТИЯ</h1>
     <p class="events-list__intro">Музыка, творческие встречи и события для тех, кто любит открывать новое.</p>
+    <a class="events-list__organize" href="#event-pp" data-popup-open="event-pp">Провести своё мероприятие</a>
     <div class="events-list__grid">
       @@include('partials/event-card.html', {"contextClass": "events-list__card", "idAttr": " id=\"event-1\"", "image": "images/event-1.svg", "alt": "Афиша: Собираемся и слушаем альбом Nirvana. Nirvana", "heading": "h2", "titleMarkup": "<a class=\"event-card__title-link\" href=\"event.html\">Собираемся и слушаем альбом Nirvana. Nirvana</a>", "description": "Это третий альбом группы, выпущенный после смерти Курта Кобейна, и первый, содержащий студийный материал.", "datetime": "2026-12-07T18:00", "schedule": "07.12.2026 | начало 18:00", "tail": "<a class=\"event-card__more\" href=\"event.html\">Подробнее о мероприятии</a>"})
 @@include('partials/event-card.html', {"contextClass": "events-list__card", "idAttr": " id=\"event-2\"", "image": "images/event-2.svg", "alt": "Афиша: Есть тема, нужно обсудить с HowStuffWorks", "heading": "h2", "titleMarkup": "Есть тема, нужно обсудить с HowStuffWorks", "description": "Один из самых популярных подкастов в мире. В нём авторы объясняют, как устроены разные вещи.", "datetime": "2026-12-14T18:30", "schedule": "14.12.2026 | начало 18:30", "tail": "<span class=\"event-card__hint\">Анонс мероприятия</span>"})
@@ -22,7 +23,48 @@
     </div>
   </div>
 </section>
+<section class="events-table" aria-labelledby="events-table-title">
+  <div class="events-table__inner">
+    <h2 class="events-table__title" id="events-table-title">Расписание мероприятий</h2>
+    <p class="events-table__intro">Дата и время ближайших встреч в пространстве Lenni Art.</p>
+    <div class="events-table__scroll" tabindex="0" role="region" aria-label="Таблица расписания, можно прокручивать по горизонтали">
+      <table class="events-table__table">
+        <caption class="events-table__caption">Афиша на декабрь 2026 года</caption>
+        <thead class="events-table__head">
+          <tr class="events-table__row">
+            <th class="events-table__heading" scope="col">Дата</th>
+            <th class="events-table__heading" scope="col">Время</th>
+            <th class="events-table__heading" scope="col">Мероприятие</th>
+            <th class="events-table__heading" scope="col">Подробнее</th>
+          </tr>
+        </thead>
+        <tbody class="events-table__body">
+          <tr class="events-table__row">
+            <td class="events-table__cell"><time datetime="2026-12-07">07.12.2026</time></td>
+            <td class="events-table__cell"><time datetime="18:00">18:00</time></td>
+            <td class="events-table__cell">Собираемся и слушаем альбом Nirvana. Nirvana</td>
+            <td class="events-table__cell"><a class="events-table__link" href="event.html">О мероприятии</a></td>
+          </tr>
+          <tr class="events-table__row">
+            <td class="events-table__cell"><time datetime="2026-12-14">14.12.2026</time></td>
+            <td class="events-table__cell"><time datetime="18:30">18:30</time></td>
+            <td class="events-table__cell">Есть тема, нужно обсудить с HowStuffWorks</td>
+            <td class="events-table__cell">Анонс</td>
+          </tr>
+          <tr class="events-table__row">
+            <td class="events-table__cell"><time datetime="2026-12-16">16.12.2026</time></td>
+            <td class="events-table__cell"><time datetime="20:00">20:00</time></td>
+            <td class="events-table__cell">Вечер | The Best of Sade</td>
+            <td class="events-table__cell">Анонс</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
 </main>
 @@include('partials/footer.html')
+@@include('html/blocks/event-pp.html')
+<script src="js/main.js" defer></script>
 </body>
 </html>

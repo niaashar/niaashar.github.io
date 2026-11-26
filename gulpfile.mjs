@@ -17,7 +17,7 @@ export function styles() {
 }
 
 export function assets() {
-  return src(['src/images/**/*', 'src/fonts/**/*'], { base: 'src' })
+  return src(['src/images/**/*', 'src/fonts/**/*', 'src/js/**/*'], { base: 'src' })
     .pipe(dest('.'));
 }
 
@@ -26,7 +26,7 @@ export const build = parallel(html, styles, assets);
 function watchFiles(done) {
   watch(['src/*.html', 'src/partials/**/*.html'], html);
   watch('src/styles/**/*.less', styles);
-  watch(['src/images/**/*', 'src/fonts/**/*'], assets);
+  watch(['src/images/**/*', 'src/fonts/**/*', 'src/js/**/*'], assets);
   done();
 }
 

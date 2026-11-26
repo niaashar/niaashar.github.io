@@ -26,6 +26,7 @@
     <p class="events-list__eyebrow">Арт-пространство Lenni Art</p>
     <h1 class="events-list__title" id="events-list-title">МЕРОПРИЯТИЯ</h1>
     <p class="events-list__intro">Музыка, творческие встречи и события для тех, кто любит открывать новое.</p>
+    <a class="events-list__organize" href="#event-pp" data-popup-open="event-pp">Провести своё мероприятие</a>
     <div class="events-list__grid">
       <article class="event-card events-list__card" id="event-1">
   <img class="event-card__image" src="images/event-1.svg" alt="Афиша: Собираемся и слушаем альбом Nirvana. Nirvana" loading="lazy">
@@ -52,6 +53,45 @@
 </article>
 
 
+    </div>
+  </div>
+</section>
+<section class="events-table" aria-labelledby="events-table-title">
+  <div class="events-table__inner">
+    <h2 class="events-table__title" id="events-table-title">Расписание мероприятий</h2>
+    <p class="events-table__intro">Дата и время ближайших встреч в пространстве Lenni Art.</p>
+    <div class="events-table__scroll" tabindex="0" role="region" aria-label="Таблица расписания, можно прокручивать по горизонтали">
+      <table class="events-table__table">
+        <caption class="events-table__caption">Афиша на декабрь 2026 года</caption>
+        <thead class="events-table__head">
+          <tr class="events-table__row">
+            <th class="events-table__heading" scope="col">Дата</th>
+            <th class="events-table__heading" scope="col">Время</th>
+            <th class="events-table__heading" scope="col">Мероприятие</th>
+            <th class="events-table__heading" scope="col">Подробнее</th>
+          </tr>
+        </thead>
+        <tbody class="events-table__body">
+          <tr class="events-table__row">
+            <td class="events-table__cell"><time datetime="2026-12-07">07.12.2026</time></td>
+            <td class="events-table__cell"><time datetime="18:00">18:00</time></td>
+            <td class="events-table__cell">Собираемся и слушаем альбом Nirvana. Nirvana</td>
+            <td class="events-table__cell"><a class="events-table__link" href="event.html">О мероприятии</a></td>
+          </tr>
+          <tr class="events-table__row">
+            <td class="events-table__cell"><time datetime="2026-12-14">14.12.2026</time></td>
+            <td class="events-table__cell"><time datetime="18:30">18:30</time></td>
+            <td class="events-table__cell">Есть тема, нужно обсудить с HowStuffWorks</td>
+            <td class="events-table__cell">Анонс</td>
+          </tr>
+          <tr class="events-table__row">
+            <td class="events-table__cell"><time datetime="2026-12-16">16.12.2026</time></td>
+            <td class="events-table__cell"><time datetime="20:00">20:00</time></td>
+            <td class="events-table__cell">Вечер | The Best of Sade</td>
+            <td class="events-table__cell">Анонс</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
@@ -85,5 +125,51 @@
 <p class="footer__credits">Создание и продвижение — Dignity</p>
 </div></footer>
 
+<!-- Задание 1.6: общий попап заявки на проведение мероприятия -->
+<div class="event-pp" id="event-pp" role="dialog" aria-modal="true" aria-labelledby="event-pp-title" aria-describedby="event-pp-intro" hidden>
+  <div class="event-pp__dialog" role="document">
+    <button class="event-pp__close" type="button" aria-label="Закрыть форму" data-popup-close>×</button>
+    <p class="event-pp__eyebrow">LENNI ART · ЗАЯВКА</p>
+    <h2 class="event-pp__title" id="event-pp-title">Провести мероприятие</h2>
+    <p class="event-pp__intro" id="event-pp-intro">Расскажите о своём событии. Это учебная форма: отправка заявки на сервер пока не настроена.</p>
+    <form class="event-pp__form" id="event-request-form" novalidate>
+      <label class="event-pp__field">
+        <span class="event-pp__label">Ваше имя <span aria-hidden="true">*</span></span>
+        <input class="event-pp__input" type="text" name="fullName" autocomplete="name" placeholder="Как к вам обращаться" required>
+      </label>
+      <label class="event-pp__field">
+        <span class="event-pp__label">Электронная почта <span aria-hidden="true">*</span></span>
+        <input class="event-pp__input" type="email" name="email" autocomplete="email" placeholder="name@example.com" required>
+      </label>
+      <label class="event-pp__field">
+        <span class="event-pp__label">Телефон <span aria-hidden="true">*</span></span>
+        <input class="event-pp__input" type="tel" name="phone" autocomplete="tel" placeholder="+7 (___) ___-__-__" required>
+      </label>
+      <label class="event-pp__field">
+        <span class="event-pp__label">Формат мероприятия</span>
+        <select class="event-pp__input" name="eventType">
+          <option value="">Выберите формат</option>
+          <option value="concert">Концерт / музыкальная встреча</option>
+          <option value="lecture">Лекция / встреча</option>
+          <option value="exhibition">Выставка</option>
+          <option value="other">Другой формат</option>
+        </select>
+      </label>
+      <label class="event-pp__field event-pp__field--wide">
+        <span class="event-pp__label">Описание мероприятия <span aria-hidden="true">*</span></span>
+        <textarea class="event-pp__input event-pp__textarea" name="description" rows="4" placeholder="Расскажите о вашей идее" required></textarea>
+      </label>
+      <label class="event-pp__consent event-pp__field--wide">
+        <input class="event-pp__checkbox" type="checkbox" name="consent" required>
+        <span class="event-pp__consent-text">Согласен(на) на обработку персональных данных для обработки заявки</span>
+      </label>
+      <div class="event-pp__actions event-pp__field--wide">
+        <button class="event-pp__submit" type="submit">Отправить заявку</button>
+        <p class="event-pp__status" role="status" aria-live="polite"></p>
+      </div>
+    </form>
+  </div>
+</div>
+<script src="js/main.js" defer></script>
 </body>
 </html>

@@ -1,9 +1,9 @@
 {
   "name": "lenni-art-study",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "private": true,
   "type": "module",
-  "description": "Учебный проект Lenni Art — задание 1.5",
+  "description": "Учебный проект Lenni Art — задания 1.5–1.6",
   "scripts": {
     "build": "gulp --gulpfile gulpfile.mjs build",
     "dev": "gulp --gulpfile gulpfile.mjs dev",

@@ -1,0 +1,107 @@
+
+/* === Задание 1.6: формы, таблица, текстовый контент === */
+.page--popup-open { overflow: hidden; }
+.event-pp[hidden] { display: none; }
+.event-pp {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(22, 20, 20, .74);
+  overflow-y: auto;
+}
+.event-pp__dialog {
+  position: relative;
+  width: min(100%, 720px);
+  max-height: calc(100vh - 40px);
+  overflow: auto;
+  padding: 42px;
+  background: #fff;
+  box-shadow: 0 25px 80px rgba(0,0,0,.22);
+}
+.event-pp__close {
+  position: absolute;
+  right: 18px;
+  top: 15px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  color: var(--ink);
+  background: #f4f1ef;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+.event-pp__eyebrow { margin: 0 0 8px; font-size: 12px; letter-spacing: .15em; color: var(--accent); }
+.event-pp__title { margin: 0 30px 12px 0; font: 300 clamp(32px, 5vw, 48px)/1.12 "MAK", Georgia, serif; }
+.event-pp__intro { max-width: 560px; margin: 0 0 28px; color: var(--muted); font-size: 14px; }
+.event-pp__form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 22px; }
+.event-pp__field { min-width: 0; display: flex; flex-direction: column; gap: 7px; }
+.event-pp__field--wide { grid-column: 1 / -1; }
+.event-pp__label { font-size: 13px; font-weight: 600; }
+.event-pp__input { width: 100%; min-width: 0; padding: 12px 13px; border: 1px solid #c9c4c1; color: var(--ink); background: #fff; font: inherit; font-size: 14px; border-radius: 0; }
+.event-pp__input:focus { border-color: var(--accent); }
+.event-pp__textarea { min-height: 100px; resize: vertical; }
+.event-pp__consent { display: flex; align-items: flex-start; gap: 10px; font-size: 12px; color: var(--muted); cursor: pointer; }
+.event-pp__checkbox { flex: 0 0 auto; margin-top: 3px; accent-color: var(--accent); }
+.event-pp__actions { display: flex; align-items: center; gap: 15px; flex-wrap: wrap; }
+.event-pp__submit { padding: 13px 22px; border: 1px solid var(--accent); background: var(--accent); color: #fff; font: inherit; font-size: 14px; cursor: pointer; }
+.event-pp__submit:hover { background: #a9241b; }
+.event-pp__status { flex: 1 1 250px; margin: 0; color: #345d3a; font-size: 13px; }
+
+.events-list__organize { display: inline-block; margin: 0 0 34px; padding: 12px 20px; background: var(--accent); color: #fff; text-decoration: none; font-size: 14px; }
+.events-list__organize:hover { background: #a9241b; }
+.events-table { background: #fff; }
+.events-table__inner { width: 100%; max-width: var(--content-width); margin: 0 auto; padding: 72px 24px 88px; }
+.events-table__title { margin: 0 0 12px; font: 300 clamp(32px, 5vw, 48px)/1.1 "MAK", Georgia, serif; }
+.events-table__intro { margin: 0 0 24px; color: var(--muted); }
+.events-table__scroll { overflow-x: auto; max-width: 100%; }
+.events-table__table { width: 100%; min-width: 660px; border-collapse: collapse; text-align: left; }
+.events-table__caption { margin-bottom: 10px; text-align: left; color: var(--muted); font-size: 13px; }
+.events-table__heading { padding: 15px 18px; background: var(--ink); color: #fff; font-size: 13px; font-weight: 600; }
+.events-table__cell { padding: 19px 18px; border-bottom: 1px solid var(--line); font-size: 14px; vertical-align: top; }
+.events-table__body .events-table__row:nth-child(even) { background: #f6f5f4; }
+.events-table__link { color: var(--accent); text-underline-offset: 3px; }
+
+.booking__form-title { margin: 0 0 7px; font-size: 19px; line-height: 1.3; }
+.booking__form-intro { margin: 0 0 17px; font-size: 13px; color: var(--muted); }
+.booking__field--wide { grid-column: 1 / -1; }
+.booking__select { background: #fff; }
+.booking__field-label { font-size: 13px; }
+.booking__agreement { display: flex; align-items: flex-start; gap: 9px; margin-top: 6px; font-size: 12px; color: var(--muted); cursor: pointer; }
+.booking__checkbox { flex: 0 0 auto; margin-top: 3px; accent-color: var(--accent); }
+.booking__button { cursor: pointer; }
+.booking__button:hover { background: #a9241b; }
+.booking__notice { margin: 12px 0 0; font-size: 12px; color: var(--muted); }
+.booking__status { margin: 10px 0 0; font-size: 13px; color: #345d3a; }
+
+.event-text { background: #fff; }
+.event-text__inner { width: 100%; max-width: var(--content-width); margin: 0 auto; padding: 76px 24px 100px; }
+.event-text__title { max-width: 480px; margin: 0 auto 52px; padding: 9px 24px; background: var(--ink); color: #fff; font: 400 27px/1.45 "MAK", Georgia, serif; text-align: center; }
+.event-text__content { display: grid; grid-template-columns: minmax(0, 800px) 1fr; gap: 45px; }
+.event-text__body { min-width: 0; }
+.event-text__heading { margin: 30px 0 13px; font-size: 23px; }
+.event-text__heading:first-child { margin-top: 0; }
+.event-text__paragraph { margin: 0 0 17px; font-size: 16px; line-height: 1.75; }
+.event-text__list { margin: 0 0 28px; padding-left: 24px; }
+.event-text__item { margin: 0 0 10px; padding-left: 4px; line-height: 1.6; }
+.event-text__quote { margin: 38px 0 32px; padding: 24px 30px; border-left: 4px solid var(--accent); background: var(--mist); }
+.event-text__quote-text { margin: 0 0 8px; font: 300 26px/1.25 "MAK", Georgia, serif; }
+.event-text__quote-author { font-size: 13px; font-style: normal; color: var(--muted); }
+.event-text__link { color: var(--accent); text-underline-offset: 3px; }
+.event-text__paragraph--last { margin-bottom: 0; }
+
+@media (max-width: 900px) {
+  .event-text__content { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .event-pp { padding: 10px; }
+  .event-pp__dialog { max-height: calc(100vh - 20px); padding: 40px 20px 24px; }
+  .event-pp__form { grid-template-columns: 1fr; gap: 15px; }
+  .event-pp__field--wide { grid-column: 1; }
+  .events-table__inner, .event-text__inner { padding: 54px 18px 65px; }
+  .event-text__title { margin-bottom: 35px; }
+  .event-text__quote { padding: 20px; }
+}

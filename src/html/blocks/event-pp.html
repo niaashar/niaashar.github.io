@@ -1,0 +1,45 @@
+<!-- Задание 1.6: общий попап заявки на проведение мероприятия -->
+<div class="event-pp" id="event-pp" role="dialog" aria-modal="true" aria-labelledby="event-pp-title" aria-describedby="event-pp-intro" hidden>
+  <div class="event-pp__dialog" role="document">
+    <button class="event-pp__close" type="button" aria-label="Закрыть форму" data-popup-close>×</button>
+    <p class="event-pp__eyebrow">LENNI ART · ЗАЯВКА</p>
+    <h2 class="event-pp__title" id="event-pp-title">Провести мероприятие</h2>
+    <p class="event-pp__intro" id="event-pp-intro">Расскажите о своём событии. Это учебная форма: отправка заявки на сервер пока не настроена.</p>
+    <form class="event-pp__form" id="event-request-form" novalidate>
+      <label class="event-pp__field">
+        <span class="event-pp__label">Ваше имя <span aria-hidden="true">*</span></span>
+        <input class="event-pp__input" type="text" name="fullName" autocomplete="name" placeholder="Как к вам обращаться" required>
+      </label>
+      <label class="event-pp__field">
+        <span class="event-pp__label">Электронная почта <span aria-hidden="true">*</span></span>
+        <input class="event-pp__input" type="email" name="email" autocomplete="email" placeholder="name@example.com" required>
+      </label>
+      <label class="event-pp__field">
+        <span class="event-pp__label">Телефон <span aria-hidden="true">*</span></span>
+        <input class="event-pp__input" type="tel" name="phone" autocomplete="tel" placeholder="+7 (___) ___-__-__" required>
+      </label>
+      <label class="event-pp__field">
+        <span class="event-pp__label">Формат мероприятия</span>
+        <select class="event-pp__input" name="eventType">
+          <option value="">Выберите формат</option>
+          <option value="concert">Концерт / музыкальная встреча</option>
+          <option value="lecture">Лекция / встреча</option>
+          <option value="exhibition">Выставка</option>
+          <option value="other">Другой формат</option>
+        </select>
+      </label>
+      <label class="event-pp__field event-pp__field--wide">
+        <span class="event-pp__label">Описание мероприятия <span aria-hidden="true">*</span></span>
+        <textarea class="event-pp__input event-pp__textarea" name="description" rows="4" placeholder="Расскажите о вашей идее" required></textarea>
+      </label>
+      <label class="event-pp__consent event-pp__field--wide">
+        <input class="event-pp__checkbox" type="checkbox" name="consent" required>
+        <span class="event-pp__consent-text">Согласен(на) на обработку персональных данных для обработки заявки</span>
+      </label>
+      <div class="event-pp__actions event-pp__field--wide">
+        <button class="event-pp__submit" type="submit">Отправить заявку</button>
+        <p class="event-pp__status" role="status" aria-live="polite"></p>
+      </div>
+    </form>
+  </div>
+</div>
